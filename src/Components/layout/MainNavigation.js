@@ -6,15 +6,15 @@ export default function MainNavigation() {
     return (
         <header className={classes.header}>
         <div className={classes.logo}>
-           React Meetups 
+          Bananiel and Pohfies Notes
         </div>
         <nav>
             <ul>
                 <li>
-                    <Link to="/">All meetups</Link>
+                    <Link to="/">All Notes</Link>
                 </li>
                 <li>
-                    <Link to="/new-meetup">Add New Meetup</Link>
+                    <Link to="/new-meetup">Add New Note</Link>
                 </li>
                 <li>
                     <Link to="/favorites">Favorites</Link>

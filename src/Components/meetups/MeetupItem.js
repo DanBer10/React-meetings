@@ -1,6 +1,7 @@
 import React from 'react'
 import classes from './MeetupItem.module.css';
 import Card from '../ui/Card';
+import { AiFillStar } from 'react-icons/ai'
 
 export default function MeetupItem(props) {
     return (
@@ -16,7 +17,7 @@ export default function MeetupItem(props) {
              <p>{props.description}</p>
              </div> 
              <div className={classes.actions}>
-                 <button>To favorites</button>
+                 <button><AiFillStar /> To favorites</button>
              </div>
              </Card>
         </li>
