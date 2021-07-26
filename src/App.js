@@ -1,14 +1,25 @@
 import './App.css';
-import Todo from './Components/Todo';
+import { Route, Switch } from 'react-router-dom'
+import AllMeetups from './pages/AllMeetups'
+import NewMeetup from './pages/NewMeetup'
+import Favorites from './pages/Favorites'
+import MainNavigation from './Components/layout/MainNavigation'
 
-function App(props) {
+function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>My Todos</h1>
-        <Todo text="Learn more" />
-        <Todo text="Todo2" />
-      </header>
+    <div>
+      <MainNavigation />
+      <Switch>
+      <Route path="/" exact>
+        <AllMeetups />
+      </Route>
+      <Route path="/new-meetup">
+        <NewMeetup />
+      </Route>
+      <Route path="/favorites">
+        <Favorites />
+      </Route>
+      </Switch>
     </div>
   );
 }
