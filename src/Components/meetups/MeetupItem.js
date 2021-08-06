@@ -1,9 +1,29 @@
-import React from "react";
+import { useContext } from "react";
 import classes from "./MeetupItem.module.css";
 import Card from "../ui/Card";
 import { AiFillStar } from "react-icons/ai";
+import FavoritesContext from "../../store/favorites-context";
 
 export default function MeetupItem(props) {
+  const favoritesCtx = useContext(FavoritesContext);
+
+  // Använder favorites-context funktionen itemIsFavorite
+  const itemIsFavorite = favoritesCtx.itemIsFavorite(props.id);
+
+  function toggleFavoriteStatusHandler() {
+    if (itemIsFavorite) {
+      favoritesCtx.removeFavorite(props.id);
+    } else {
+      favoritesCtx.addFavorite({
+        id: props.id,
+        title: props.title,
+        description: props.description,
+        image: props.image,
+        adress: props.adress,
+      });
+    }
+  }
+
   return (
     <li className={classes.item}>
       <Card>
@@ -16,9 +36,9 @@ export default function MeetupItem(props) {
           <p>{props.description}</p>
         </div>
         <div className={classes.actions}>
-          <button>
+          <button onClick={toggleFavoriteStatusHandler}>
             <AiFillStar />
-            To favorites
+            {itemIsFavorite ? "Remove from favorites" : "Add to favorites"}
           </button>
         </div>
       </Card>
