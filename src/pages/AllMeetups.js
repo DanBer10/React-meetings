@@ -35,7 +35,7 @@ export default function AllMeetups() {
   }
 
   if (loadedMeetups.length === 0) {
-    return <section>You have meetings left</section>;
+    return <section>You have 0 meetings left</section>;
   }
 
   return (
