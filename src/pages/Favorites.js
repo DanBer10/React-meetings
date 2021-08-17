@@ -1,5 +1,4 @@
-import React from "react";
-import { useContext } from "react";
+import { useContext, useState, useEffect } from "react";
 import MeetupList from "../Components/meetups/MeetupList";
 
 import FavoritesContext from "../store/favorites-context";

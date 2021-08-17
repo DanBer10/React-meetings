@@ -2,6 +2,7 @@ import { useContext } from "react";
 import React from "react";
 import { Link } from "react-router-dom";
 import classes from "./MainNavigation.module.css";
+import { AiOutlinePlus } from "react-icons/ai";
 
 import FavoritesContext from "../../store/favorites-context";
 
@@ -15,8 +16,10 @@ export default function MainNavigation() {
           <li>
             <Link to="/">All Meetings</Link>
           </li>
-          <li>
-            <Link to="/new-meetup">Add New Meeting</Link>
+          <li className="add-meeting">
+            <Link to="/new-meetup">
+              Add New Meeting <AiOutlinePlus />{" "}
+            </Link>
           </li>
           <li>
             <Link to="/favorites">
